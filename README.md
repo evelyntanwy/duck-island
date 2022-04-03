@@ -7,7 +7,7 @@ To store the information with our own ratings and notes.
 
 ## The Tech
 
-This project is to create a full stack and practice the use of :-
+This project is to create a full stack website and practice the use of :-
 - React
 - Database
 - Tailwind 
