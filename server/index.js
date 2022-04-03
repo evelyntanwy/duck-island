@@ -1,10 +1,8 @@
-const express = require("express");
-const app = express();
+const server = require("./server");
 
-app.get("/", (req, res) => {
-  res.send("Hello ice-cream");
-});
+const PORT = process.env.PORT || 3000;
 
-app.listen(3001, () => {
-  console.log("running on port 3001");
+server.listen(PORT, () => {
+  // eslint-disable-next-line no-console
+  console.log("Listening on PORT", PORT);
 });
