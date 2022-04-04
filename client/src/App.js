@@ -1,16 +1,63 @@
+import React, { useState } from "react";
+import Form from "./components/Form";
+import Flavours from "./components/Flavours";
+
 import "./App.css";
 
+const initialData = [
+  {
+    id: 0,
+    text: "Butterscotch pecan",
+    et_score: 5,
+    jy_score: 4.5,
+  },
+  {
+    id: 1,
+    text: "Hotcross bun",
+    et_score: 4.5,
+    jy_score: 3.5,
+  },
+  {
+    id: 2,
+    text: "Mapel honeycomb smoked almond",
+    et_score: 4,
+    jy_score: 4.5,
+  },
+];
+
 function App() {
+  const [inputValue, setInputValue] = useState("");
+  const [flavours, setFlavours] = useState(initialData);
+
+  const handleSubmit = () => {
+    if (inputValue === "") return;
+    const newFlavour = { id: Date.now(), text: inputValue };
+    setFlavours([...flavours, newFlavour]);
+    setInputValue("");
+  };
+
+  const handleDeleteFlavours = (id) => {
+    const newFlavours = flavours.filter((flavour) => flavour.id !== id);
+    setFlavours(newFlavours);
+  };
+
   return (
     <div className="App">
-      <h1>Hello</h1>
-      <div className="form">
-        <label>Ice-cream name :</label>
-        <input type="text" name="iceCreamName" />
-        <label>Score :</label>
-
-        <input type="text" name="score" />
-        <button>Submit</button>
+      <div className="flavourslist">
+        <h1>Duck island Ice-Cream</h1>
+        <Form
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          handleSubmit={handleSubmit}
+        />
+        {flavours.map((flavour, index) => {
+          <Flavours
+            flavour={flavour}
+            index={index}
+            handleDeleteFlavours={handleDeleteFlavours}
+            key={flavours.id}
+          />;
+        })}
       </div>
     </div>
   );
