@@ -5,6 +5,7 @@ function Flavours({ flavours, index, handleDeleteFlavours }) {
     <div className="flavours">
       <span className="flavours-text">
         {index + 1}.{flavours.text}
+        {flavours}
       </span>
       <span
         onClick={() => handleDeleteFlavours(flavours.id)}

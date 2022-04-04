@@ -64,6 +64,13 @@ function App() {
             key={flavours.id}
           />;
         })}
+        <div>
+          {flavours.map((item) => (
+            <li>
+              {item.text} - {item.score}
+            </li>
+          ))}
+        </div>
       </div>
     </div>
   );
