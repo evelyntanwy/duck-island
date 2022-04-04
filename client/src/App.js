@@ -10,28 +10,32 @@ const initialData = [
     text: "Butterscotch pecan",
     et_score: 5,
     jy_score: 4.5,
+    score: 5,
   },
   {
     id: 1,
     text: "Hotcross bun",
     et_score: 4.5,
     jy_score: 3.5,
+    score: 5,
   },
   {
     id: 2,
     text: "Mapel honeycomb smoked almond",
     et_score: 4,
     jy_score: 4.5,
+    score: 5,
   },
 ];
 
 function App() {
   const [inputValue, setInputValue] = useState("");
+  const [inputScore, setInputScore] = useState("");
   const [flavours, setFlavours] = useState(initialData);
 
   const handleSubmit = () => {
     if (inputValue === "") return;
-    const newFlavour = { id: Date.now(), text: inputValue };
+    const newFlavour = { id: Date.now(), text: inputValue, score: inputScore };
     setFlavours([...flavours, newFlavour]);
     setInputValue("");
   };
@@ -44,10 +48,12 @@ function App() {
   return (
     <div className="App">
       <div className="flavourslist">
-        <h1>Duck island Ice-Cream</h1>
+        <h1>Duck Island Ice-Cream</h1>
         <Form
           inputValue={inputValue}
           setInputValue={setInputValue}
+          inputScore={inputScore}
+          setInputScore={setInputScore}
           handleSubmit={handleSubmit}
         />
         {flavours.map((flavour, index) => {
