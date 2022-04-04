@@ -10,6 +10,17 @@
   color: var(--theme-font);
 }
 
+table {
+  display: inline;
+  margin: 10px;
+}
+
+td {
+  border: 1px solid var(--theme-font);
+  margin: 5px;
+  padding: 10px;
+}
+
 /* .form {
   display: flex;
   flex-direction: column;

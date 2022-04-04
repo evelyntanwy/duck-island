@@ -65,11 +65,14 @@ function App() {
           />;
         })}
         <div>
-          {flavours.map((item) => (
-            <li>
-              {item.text} - {item.score}
-            </li>
-          ))}
+          <table>
+            {flavours.map((item) => (
+              <tr>
+                <td>{item.text} </td>
+                <td> {item.score}</td>
+              </tr>
+            ))}
+          </table>
         </div>
       </div>
     </div>
