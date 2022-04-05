@@ -3,6 +3,7 @@ import Form from "./components/Form";
 import Flavours from "./components/Flavours";
 
 import "./App.css";
+import firebase from "firebase/compat/app";
 
 const initialData = [
   {
