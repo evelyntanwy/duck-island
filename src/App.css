@@ -21,6 +21,29 @@ td {
   padding: 10px;
 }
 
+.flavours {
+  text-align: left;
+  margin-top: 8px;
+  background-color: transparent;
+  border: 2px solid #ffafa2;
+  color: #ffafa2;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 22px;
+  font-family: inherit;
+}
+
+.flavours-delete {
+  float: right;
+  padding: 0px 4px;
+  cursor: pointer;
+}
+
+.flavours-delete:hover {
+  background-color: #ffafa21c;
+  border-radius: 6px;
+}
+
 /* .form {
   display: flex;
   flex-direction: column;

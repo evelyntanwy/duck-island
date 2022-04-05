@@ -7,21 +7,21 @@ import firebase from "firebase/compat/app";
 
 const initialData = [
   {
-    id: 0,
+    _id: 0,
     text: "Butterscotch pecan",
     et_score: 5,
     jy_score: 4.5,
     score: 5,
   },
   {
-    id: 1,
+    _id: 1,
     text: "Hotcross bun",
     et_score: 4.5,
     jy_score: 3.5,
     score: 5,
   },
   {
-    id: 2,
+    _id: 2,
     text: "Mapel honeycomb smoked almond",
     et_score: 4,
     jy_score: 4.5,
@@ -36,13 +36,13 @@ function App() {
 
   const handleSubmit = () => {
     if (inputValue === "") return;
-    const newFlavour = { id: Date.now(), text: inputValue, score: inputScore };
+    const newFlavour = { _id: Date.now(), text: inputValue, score: inputScore };
     setFlavours([...flavours, newFlavour]);
     setInputValue("");
   };
 
   const handleDeleteFlavours = (id) => {
-    const newFlavours = flavours.filter((flavour) => flavour.id !== id);
+    const newFlavours = flavours.filter((flavour) => flavour._id !== id);
     setFlavours(newFlavours);
   };
 
@@ -62,19 +62,19 @@ function App() {
             flavour={flavour}
             index={index}
             handleDeleteFlavours={handleDeleteFlavours}
-            key={flavours.id}
+            key={flavour._id}
           />;
         })}
-        <div>
+       
           <table>
             {flavours.map((item) => (
-              <tr>
+              <tr key={item}>
                 <td>{item.text} </td>
                 <td> {item.score}</td>
               </tr>
             ))}
           </table>
-        </div>
+        
       </div>
     </div>
   );

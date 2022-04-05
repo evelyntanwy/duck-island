@@ -1,17 +1,16 @@
 import React from "react";
 
-function Flavours({ flavours, index, handleDeleteFlavours }) {
+function Flavours({ flavour, index, handleDeleteFlavours }) {
   return (
     <div className="flavours">
       <span className="flavours-text">
-        {index + 1}.{flavours.text}
-        {flavours}
+        {index + 1}.{flavour.text}
       </span>
       <span
-        onClick={() => handleDeleteFlavours(flavours.id)}
+        onClick={() => handleDeleteFlavours(flavour._id)}
         className="flavours-delete"
       >
-        X
+        Close
       </span>
       <p>Flavours</p>
     </div>
