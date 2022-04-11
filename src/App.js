@@ -57,24 +57,17 @@ function App() {
           setInputScore={setInputScore}
           handleSubmit={handleSubmit}
         />
-        {flavours.map((flavour, index) => {
-          <Flavours
-            flavour={flavour}
-            index={index}
-            handleDeleteFlavours={handleDeleteFlavours}
-            key={flavour._id}
-          />;
-        })}
-       
-          <table>
-            {flavours.map((item) => (
-              <tr key={item}>
-                <td>{item.text} </td>
-                <td> {item.score}</td>
-              </tr>
-            ))}
-          </table>
-        
+
+        <table>
+          {flavours.map((flavour, index) => (
+            <Flavours
+              flavour={flavour}
+              index={index}
+              handleDeleteFlavours={handleDeleteFlavours}
+              key={flavour._id}
+            />
+          ))}
+        </table>
       </div>
     </div>
   );
