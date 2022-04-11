@@ -12,6 +12,7 @@
 
 table {
   display: inline;
+  align-items: center;
   margin: 10px;
 }
 
@@ -19,6 +20,7 @@ td {
   border: 1px solid var(--theme-font);
   margin: 5px;
   padding: 10px;
+  width: 30px;
 }
 
 .flavours {
@@ -31,6 +33,7 @@ td {
   border-radius: 6px;
   font-size: 22px;
   font-family: inherit;
+  width: 50vh;
 }
 
 .flavours-delete {
